@@ -1,15 +1,19 @@
 #include <stdio.h>
-#include <string.h>
-reverse()
-{
-   char s[100];
 
-   printf("Enter a string to reverse\n");
-   gets(s);
+reverse() {
 
-   strrev(s);
+  int n, reverse = 0, remainder;
 
-   printf("Reverse of the string: %s\n", s);
+  printf("Enter an integer: ");
+  scanf("%d", &n);
 
-   return 0;
+  while (n != 0) {
+    remainder = n % 10;
+    reverse = reverse * 10 + remainder;
+    n /= 10;
+  }
+
+  printf("Reversed number = %d", reverse);
+
+  return 0;
 }
